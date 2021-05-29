@@ -8,3 +8,6 @@ RUN apt-get update && apt-get -y upgrade
 
 # install nginx
 RUN apt-get install -y nginx wget
+
+# nginx config
+COPY srcs/nginx.conf /tmp
