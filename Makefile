@@ -6,12 +6,18 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/05/29 15:17:41 by plam             ###   ########.fr        #
+#    Updated: 2021/05/29 18:39:32 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-DOCKER_COMPOSE:		
+SRC				=	docker-compose.yml
 
-all:
+DOCKER_COMPOSE:
+					docker-compose $(SRC)
 
-.PHONY:	 all re clean fclean
+all:			$(DOCKER_COMPOSE)
+				service nginx start
+				service mysql start
+				service php7.3-fpm start
+
+.PHONY:	 all clean fclean re
