@@ -10,4 +10,4 @@ RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y nginx wget
 
 # nginx config
-COPY srcs/nginx.conf /tmp
+COPY nginx.conf /tmp
