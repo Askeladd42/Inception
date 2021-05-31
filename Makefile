@@ -6,14 +6,14 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/05/29 19:57:41 by plam             ###   ########.fr        #
+#    Updated: 2021/05/31 11:55:43 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC				=	docker-compose.yml
+SRC				=	srcs
 
 DOCKER_COMPOSE:
-					docker-compose $(SRC)
+					docker-compose $(SRC)/docker_compose.yml
 DOCKER_NET:
 					docker network create my-net \
 					docker create --name my-nginx \
