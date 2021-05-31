@@ -11,5 +11,9 @@ services:
       - redis
   redis:
     image: redis
+networks:
+  frontend:
+    name: cus_front
+    driver: cus_driver_1
 volumes:
   logvolume01: {}
