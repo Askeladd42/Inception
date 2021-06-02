@@ -1,5 +1,15 @@
 version: "3.9"  # optional since v1.27.0
 services:
+  mysql:
+    image: mariadb
+    volumes:
+      - /data/mysql:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:php7.3-fpm-debianbuster
+    volumes:
+      - /data/html:/var/www/html
+
   web:
     build: .
     ports:
@@ -16,4 +26,3 @@ networks:
     name: cus_front
     driver: cus_driver_1
 volumes:
-  logvolume01: {}
