@@ -9,13 +9,6 @@ services:
     image: wordpress:php7.3-fpm
     volumes:
       - /data/html:/var/www/html
-    environment:
-      WP_DB_HOST: mysql
-      MYSQL_ROOT_PASSWORD: mysql_root_pass
-      WP_DB_NAME: db_name
-      WP_DB_USER: user_name
-      WP_DB_PASSWORD: user_pass
-      WP_TABLE_PREFIX: wp_
 
 nginx:
   image: nginx:debian-buster
@@ -25,15 +18,7 @@ nginx:
     ports:
       - 8080:80
 
-  web:
-    build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - .:/code
-      - logvolume01:/var/log
-    links:
-      - redis
+
   redis:
     image: redis
 networks:
