@@ -4,6 +4,7 @@ services:
     image: mariadb
     volumes:
       - /data/mysql:/var/lib/mysql
+    restart: always
 
   wordpress:
     image: wordpress:php7.3-fpm
@@ -11,17 +12,18 @@ services:
       - /data/html:/var/www/html
     ports:
       - "8000:80"
+      restart: always
 
-nginx:
-  image: nginx:debian-buster
-  volumes:
-    - nginx:/etc/nginx/conf.d
-    - /data/html:/var/www/html
+  nginx:
+    image: nginx:debian-buster
+    volumes:
+      - nginx:/etc/nginx/conf.d
+      - /data/html:/var/www/html
     ports:
       - 8080:80
+    restart: always
 
-
-  redis:
+redis:
     image: redis
 networks:
   frontend:
