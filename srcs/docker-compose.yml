@@ -9,6 +9,8 @@ services:
     image: wordpress:php7.3-fpm
     volumes:
       - /data/html:/var/www/html
+    ports:
+      - "8000:80"
 
 nginx:
   image: nginx:debian-buster
