@@ -33,7 +33,7 @@ services:
       - nginx:/etc/nginx/conf.d
       - /data/html:/var/www/html
     ports:
-      - 443:443
+      - "443:443"
     restart: always
 
 redis:
