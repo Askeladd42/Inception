@@ -5,6 +5,11 @@ services:
     volumes:
       - /data/mysql:/var/lib/mysql
     restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE
+      MYSQL_USER
+      MYSQL_PASSWORD
 
   wordpress:
     image: wordpress:php7.3-fpm
@@ -13,6 +18,12 @@ services:
     ports:
       - "8000:80"
     restart: always
+    environment:
+      WP_DB_HOST
+      WP_DB_NAME
+      WP_DB_USER
+      WP_DB_PASSWORD
+      WP_TABLE_PREFIX
 
   nginx:
     image: nginx:debian-buster
