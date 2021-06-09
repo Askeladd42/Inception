@@ -1,46 +1,36 @@
 version:   "3.9"
 services:
+  nginx:
+    image: ./nginx
+    volumes:
+      - nginx:/etc/nginx/conf.d
+      - /data/html:/var/www/html
+    ports:
+      - "443:443"
+    restart: on-failure
+    env_file: 
+      - .env
+
   mysql:
     image: mariadb
     volumes:
       - /data/mysql:/var/lib/mysql
     ports: 
-      - "3306:3306"
-    restart: always
-    environment: 
-      MYSQL_ROOT_PASSWORD
-      MYSQL_DATABASE
-      MYSQL_USER
-      MYSQL_PASSWORD
+      - "3306"
+    restart: on-failure
+    env_file: 
+      - .env
 
   wordpress:
     image: wordpress:php7.3-fpm
     volumes:
       - /data/html:/var/www/html
     ports:
-      - "9000:3306"
-    restart: always
-    environment:
-      WP_DB_HOST
-      WP_DB_NAME
-      WP_DB_USER
-      WP_DB_PASSWORD
-      WP_TABLE_PREFIX
+      - "9000"
+    restart: on-failure
+    env_file: 
+      - .env
 
-  nginx:
-    image: nginx:debian-buster
-    volumes:
-      - nginx:/etc/nginx/conf.d
-      - /data/html:/var/www/html
-    ports:
-      - "443:443"
-    restart: always
-    environment: 
-      DOMAIN_NAME
-redis:
-    image: redis
 networks:
-  frontend:
-    name: cus_front
-    driver: cus_driver_1
-volumes:
+  backend:
+    driver: bridge
