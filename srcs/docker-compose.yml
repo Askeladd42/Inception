@@ -1,15 +1,17 @@
-version:   "3.9"
+version:   "3"
 services:
   nginx:
-    image: ./nginx
+    image: nginx
     volumes:
-      - nginx:/etc/nginx/conf.d
+      - ./conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
     ports:
       - "443:443"
     restart: on-failure
     env_file: 
       - .env
+    networks:
+      - backend
 
   mysql:
     image: mariadb

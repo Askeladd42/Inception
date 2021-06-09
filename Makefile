@@ -13,10 +13,10 @@
 SRC				=	srcs
 
 up:
-					docker-compose -f $(SRC)/docker_compose.yml up --build -d
+					docker-compose -f $(SRC)/docker-compose.yml up --build -d
 
 down:
-					docker-compose -f $(SRC)/docker_compose.yml down -d
+					docker-compose -f $(SRC)/docker-compose.yml down
 DOCKER_NET:
 					docker network create my-net \
 					docker create --name my-nginx \
