@@ -12,8 +12,11 @@
 
 SRC				=	srcs
 
-DOCKER_COMPOSE:
-					docker-compose $(SRC)/docker_compose.yml up -d --env-file
+up:
+					docker-compose -f $(SRC)/docker_compose.yml up --build -d
+
+down:
+					docker-compose -f $(SRC)/docker_compose.yml down -d
 DOCKER_NET:
 					docker network create my-net \
 					docker create --name my-nginx \
@@ -29,4 +32,4 @@ all:			$(DOCKER_COMPOSE) \
 clean:
 				docker-compose rm
 
-.PHONY:	 all clean fclean re
+.PHONY:	 up down clean
