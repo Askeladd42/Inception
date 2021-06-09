@@ -20,6 +20,8 @@ services:
     restart: on-failure
     env_file: 
       - .env
+    networks:
+      - backend
 
   wordpress:
     image: wordpress:php7.3-fpm
@@ -30,6 +32,8 @@ services:
     restart: on-failure
     env_file: 
       - .env
+    networks:
+      - backend
 
 networks:
   backend:
