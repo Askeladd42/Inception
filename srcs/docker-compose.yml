@@ -35,7 +35,8 @@ services:
     ports:
       - "443:443"
     restart: always
-
+    environment: 
+      DOMAIN_NAME
 redis:
     image: redis
 networks:

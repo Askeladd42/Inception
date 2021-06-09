@@ -26,4 +26,7 @@ all:			$(DOCKER_COMPOSE) \
 				service mysql start \
 				service php7.3-fpm start \
 
+clean:
+				docker-compose rm
+
 .PHONY:	 all clean fclean re
