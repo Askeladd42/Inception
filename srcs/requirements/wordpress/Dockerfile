@@ -26,4 +26,4 @@ RUN cd /tmp \
 
 COPY ./wordpress/wp-config.php /var/www/html/wordpress
 
-#start php & wordpress
+# start wordpress + php
