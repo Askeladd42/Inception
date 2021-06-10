@@ -26,7 +26,7 @@ services:
       - backend
 
   wordpress:
-    image: wordpress:php7.3-fpm
+    build: ./requirements/wordpress
     volumes:
       - /data/html:/var/www/html
     ports:
