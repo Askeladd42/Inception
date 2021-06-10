@@ -12,10 +12,11 @@ RUN apt-get install -y php-fpm php-gd php-mysql php-cli \
 php-common php-curl php-opcache php-json php-imap php-mbstring php-xml
 
 #install wordpress
+
+ADD https://wordpress.org/latest.tar.gz /tmp/latest.tar.gz
 RUN cd /tmp \
-	&& wget https://wordpress.org/latest.tar.gz \
 	&& tar -zxvf latest.tar.gz \
-	&& mv wordpress/ /var/www/html/wordpress \
+	&& mv -f wordpress/ /var/www/html/wordpress \
 	&& chown -R www-data:www-data /var/www/html/wordpress \
 	&& chmod 755 -R /var/www/html/wordpress/
 
