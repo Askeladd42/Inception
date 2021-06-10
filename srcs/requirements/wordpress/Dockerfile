@@ -27,3 +27,5 @@ RUN cd /tmp \
 COPY ./wp-config.php /var/www/html/wordpress
 
 # start wordpress + php
+
+RUN php7.3-fpm start
