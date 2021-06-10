@@ -18,3 +18,8 @@ RUN cd /tmp \
 	&& mv wordpress/ /var/www/html/wordpress \
 	&& chown -R www-data:www-data /var/www/html/wordpress \
 	&& chmod 755 -R /var/www/html/wordpress/
+
+# wordpress configuration
+
+COPY ./wordpress/wp-config.php /var/www/html/wordpress
+#COPY srcs/wordpress_database.sql /tmp
