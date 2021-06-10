@@ -16,7 +16,9 @@ php-common php-curl php-opcache php-json php-imap php-mbstring php-xml
 ADD https://wordpress.org/latest.tar.gz /tmp/latest.tar.gz
 RUN cd /tmp \
 	&& tar -zxvf latest.tar.gz \
-	&& mv -f wordpress/ /var/www/html/wordpress \
+	&& mkdir /var/www \
+	&& mkdir /var/www/html \
+	&& mv wordpress/ /var/www/html/wordpress \
 	&& chown -R www-data:www-data /var/www/html/wordpress \
 	&& chmod 755 -R /var/www/html/wordpress/
 
