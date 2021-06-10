@@ -1,7 +1,7 @@
 version:   "3"
 services:
   nginx:
-    image: nginx
+    build: ./requirements/nginx
     volumes:
       - ./conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
