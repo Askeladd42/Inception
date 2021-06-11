@@ -8,3 +8,7 @@ RUN apt-get update && apt-get -y upgrade
 
 # install maria-db (database)
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y mariadb-server
+
+# Ports
+
+EXPOSE 3306

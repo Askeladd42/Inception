@@ -14,3 +14,7 @@ COPY ./conf/nginx.conf /tmp
 
 # start nginx
 CMD [ "nginx", "-g", "daemon off;" ]
+
+# Ports
+
+EXPOSE 443
