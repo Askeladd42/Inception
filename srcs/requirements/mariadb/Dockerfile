@@ -7,17 +7,19 @@ LABEL maintainer="plam plam@student.42.fr"
 RUN 		apt-get update && apt-get -y upgrade
 
 # install maria-db (database)
-RUN 		DEBIAN_FRONTEND="noninteractive" apt-get install -y mariadb-server
+RUN 		apt-get install -y mariadb-server
 
 
 # Copy confile files
 COPY		start_mariadb.sh /start_mariadb.sh
-COPY		base.sql /base.sql
+COPY		database.sql /database.sql
 RUN			chmod +x /start_mariadb.sh
 COPY		./conf/mariadb.cnf /etc/mysql/mariadb.cnf
 
 # Start server
 ENTRYPOINT	["/start_mariadb.sh"]
+RUN echo ${DOMAIN_NAME}
+RUN env
 
 # Ports
 

@@ -14,7 +14,7 @@ services:
       - backend
 
   mysql:
-    image: mariadb
+    build: ./requirements/mariadb
     volumes:
       - /data/mysql:/var/lib/mysql
     ports: 
