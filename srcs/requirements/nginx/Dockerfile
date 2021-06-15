@@ -12,6 +12,11 @@ RUN apt-get install -y nginx wget
 # nginx config
 COPY ./conf/nginx.conf /tmp
 
+# SSL creation
+
+COPY ssl/inception.key /etc/ssl/private/nginx-cert.key
+COPY ssl/inception.crt /etc/ssl/certs/nginx-cert.crt
+
 # start nginx
 CMD [ "nginx", "-g", "daemon off;" ]
 
