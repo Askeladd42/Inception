@@ -1,4 +1,2 @@
-# access to wordpress for the mariaDB container (temporary)
-
 [mysqld]
 port=3306
