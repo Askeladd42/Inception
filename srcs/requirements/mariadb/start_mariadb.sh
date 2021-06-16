@@ -1,5 +1,3 @@
-#!bin/bash
-
 service mysql start \
 sleep infinity \
 mysql -u root -e "CREATE DATABASE ${MYSQL_DATABASE}" \

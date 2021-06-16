@@ -25,7 +25,7 @@ define( 'DB_USER', ${WP_DB_USER});
 /** MySQL database password */
 define('DB_PASSWORD', ${WP_DB_PASSWORD});
 /** MySQL hostname */
-define( 'DB_HOST', $(WP_DB_HOST));
+define('DB_HOST', ${WP_DB_HOST});
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Do not change this if in doubt. */
@@ -47,7 +47,7 @@ define('NONCE_SALT',       '_Ia/iuPYgw0#/wChs:&YrDBTA473v(/c&FFYo+q.=AE;Ls_=k*>C
 /* setting table prefix (It is possible to have multiple installations in one database if you give each a unique prefix.)
 	ONLY NUMBERS, LETTERS AND UNDERSCORES */
 
-$table_prefix = 'wp_';
+$table_prefix = ${WP_TABLE_PREFIX};
 
 # WP_DISABLE_FATAL_ERROR_HANDLER (here, is deactivated)
 
