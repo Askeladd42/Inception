@@ -17,9 +17,7 @@ RUN			chmod +x /start_mariadb.sh
 COPY		./conf/mariadb.cnf /etc/mysql/mariadb.cnf
 
 # Start server
-ENTRYPOINT	["/start_mariadb.sh"]
-RUN echo ${DOMAIN_NAME}
-RUN env
+ENTRYPOINT	["/start_mariadb.sh", "-g", "daemon off;"]
 
 # Ports
 

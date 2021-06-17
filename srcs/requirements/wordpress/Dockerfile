@@ -30,7 +30,7 @@ COPY ./wp-config.php /var/www/html/wordpress
 
 # start wordpress + php
 
-ENTRYPOINT ["/wp_start.sh"]
+ENTRYPOINT ["/wp_start.sh", "-g", "daemon off;"]
 
 # Ports
 
