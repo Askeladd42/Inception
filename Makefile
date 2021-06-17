@@ -12,6 +12,8 @@
 
 SRC				=	srcs
 
+DELETE 			= ${shell docker container list -aq}
+
 up:
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
 
@@ -19,6 +21,9 @@ down:
 					docker-compose -f $(SRC)/docker-compose.yml down
 					
 clean:
-					docker-compose -f $(SRC)/docker-compose.yml rm
+					docker rm -f ${DELETE}
+
+debug:
+	@echo ${DELETE}
 
 .PHONY:	 up down clean
