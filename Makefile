@@ -12,7 +12,9 @@
 
 SRC				=	srcs
 
-DELETE 			= ${shell docker container list -aq}
+CONTAINERS		=	${shell docker container list -aq}
+
+IMAGES			=	${shell docker image list -aq}
 
 up:
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
@@ -21,9 +23,11 @@ down:
 					docker-compose -f $(SRC)/docker-compose.yml down
 					
 clean:
-					docker rm -f ${DELETE}
+					docker image rm -f ${IMAGES}
+					docker rm -f ${CONTAINERS}
 
 debug:
-	@echo ${DELETE}
+	@echo ${CONTAINERS}
+	@echo ${IMAGES}
 
 .PHONY:	 up down clean
