@@ -23,6 +23,7 @@ down:
 					docker-compose -f $(SRC)/docker-compose.yml down
 					
 clean:
+					docker rmi -f ${IMAGES}
 					docker image rm -f ${IMAGES}
 
 debug:
