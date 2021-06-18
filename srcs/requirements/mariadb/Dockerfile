@@ -14,7 +14,7 @@ RUN 		apt-get install -y mariadb-server
 COPY		start_mariadb.sh /start_mariadb.sh
 COPY		database.sql /database.sql
 RUN			chmod +x /start_mariadb.sh
-COPY		./conf/mariadb.cnf /etc/mysql/mariadb.cnf
+#COPY		./conf/mariadb.cnf /etc/mysql/my.cnf
 
 # Start server
 ENTRYPOINT	["/start_mariadb.sh", "-g", "daemon off;"]
