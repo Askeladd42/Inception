@@ -8,4 +8,6 @@ service mysql start \
 #mysql -u root -e "FLUSH PRIVILEGES" \
 #mysql -u root -p ${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /database.sql \
 
-exec mysqld_safe --datadir="var/lib/mysql"
+exec mysqld_safe --datadir="var/lib/mysql/mysql" \
+
+sleep infinity
