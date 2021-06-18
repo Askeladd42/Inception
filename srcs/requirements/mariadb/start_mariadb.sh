@@ -7,4 +7,4 @@
 #mysql -u root -e "FLUSH PRIVILEGES" \
 #mysql -u root -p ${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /database.sql \
 
-exec mysqld_safe -u root --datadir="var/lib/mysql/mysql"
+exec mysqld -u root --datadir="/var/lib/mysql/mysql"
