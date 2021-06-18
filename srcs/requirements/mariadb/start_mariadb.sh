@@ -1,10 +1,12 @@
 #!/bin/sh
 
-#mysql -u root -e "CREATE DATABASE 'Inception'" \
-#mysql -u root -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
-#mysql -u root -e "GRANT ALL PRIVILEGES ON 'Inception' TO 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
-#mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'Inception' IDENTIFIED BY 'bruh'" \
-#mysql -u root -e "FLUSH PRIVILEGES" \
+service mysql start \
+
+mysql -e "CREATE DATABASE 'Inception'" \
+mysql -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
+mysql -e "GRANT ALL PRIVILEGES ON 'Inception' TO 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
+mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'Inception' IDENTIFIED BY 'bruh'" \
+mysql -e "FLUSH PRIVILEGES" \
 #mysql -u root -p ${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /database.sql \
 
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
