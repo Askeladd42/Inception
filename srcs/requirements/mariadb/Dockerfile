@@ -19,11 +19,6 @@ COPY		./conf/mariadb.cnf /etc/mysql/my.cnf
 # Start server
 ENTRYPOINT	["/start_mariadb.sh", "-g", "daemon off;"]
 
-# test env variables
-
-RUN echo ${MYSQL_PASSWORD}
-RUN echo env
-
 # Ports
 
 EXPOSE 3306

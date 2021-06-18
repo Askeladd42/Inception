@@ -6,7 +6,7 @@ services:
       - ./conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
     ports:
-      - "443:443"
+      - "127.0.0.1:443:443"
     restart: on-failure
     env_file: 
       - .env
