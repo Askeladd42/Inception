@@ -7,6 +7,7 @@ mysql -u root -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
 mysql -u root -e "GRANT ALL PRIVILEGES ON 'Inception' TO 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
 mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'Inception' IDENTIFIED BY 'bruh'" \
 mysql -u root -e "FLUSH PRIVILEGES" \
-#mysql -u root -p ${MYSQL_ROOT_PASSWORD} ${MYSQL_DATABASE} < /database.sql \
+#mysql -u ${MYSQL_ROOT_USER} -p ${MYSQL_ROOT_PASSWORD} 
+#mysql -u root ${MYSQL_DATABASE} < /database.sql \
 
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
