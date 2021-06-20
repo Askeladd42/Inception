@@ -11,3 +11,5 @@ mysql -u root -e "FLUSH PRIVILEGES" \
 #mysql -u root ${MYSQL_DATABASE} < /database.sql \
 
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
+
+# sql database + wp database missing, need to correct ASAP
