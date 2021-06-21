@@ -2,11 +2,11 @@
 
 service mysql start \
 
-mysql -u root -e "CREATE DATABASE 'Inception'" \
-mysql -u root -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
-mysql -u root -e "GRANT ALL PRIVILEGES ON 'Inception' TO 'corrector'@'Inception' IDENTIFIED BY 'oof'" \
-mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'Inception' IDENTIFIED BY 'bruh'" \
-mysql -u root -e "FLUSH PRIVILEGES" \
+mysql -e "CREATE DATABASE Inception" \
+mysql -e "CREATE USER corrector@Inception IDENTIFIED BY oof" \
+mysql -e "GRANT ALL PRIVILEGES ON 'Inception' TO corrector@Inception IDENTIFIED BY oof" \
+mysql -e "GRANT ALL PRIVILEGES ON *.* TO boss@Inception IDENTIFIED BY bruh" \
+mysql -e "FLUSH PRIVILEGES" \
 #mysql -u ${MYSQL_ROOT_USER} -p ${MYSQL_ROOT_PASSWORD} 
 #mysql -u root ${MYSQL_DATABASE} < /database.sql \
 
