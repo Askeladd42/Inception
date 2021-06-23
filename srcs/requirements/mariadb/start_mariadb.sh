@@ -1,6 +1,6 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
-service mysql start
+exec mysql start
 
 mysql -e "CREATE DATABASE Inception"
 mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
