@@ -21,16 +21,21 @@ RUN 	cd /tmp \
 		&& mv -f wordpress /var/www/html/wordpress \
 		&& chown -R www-data:www-data /var/www/html/wordpress \
 		&& chmod 755 -R /var/www/html/wordpress/
+COPY	./wp-config.php /var/www/html/wordpress/
+RUN 	rm -rf /var/www/html/wordpress/wp-config-sample.php
 COPY 	wp_start.sh /wp_start.sh
 RUN 	chmod +x /wp_start.sh
 
-# wordpress configuration
-
-COPY ./wp-config.php /var/www/html/wordpress
-
 # start wordpress + php
 
-ENTRYPOINT ["/wp_start.sh", "-g", "daemon off;"]
+ENTRYPOINT ["/wp_start.sh", "-g", "--nodaemonize"]
+
+## test with another method (cmd use)
+#RUN	sed -i "s/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/" "/etc/php/7.3/fpm/pool.d/www.conf"
+#RUN 	mkdir -p /run/php/
+#RUN 	touch /run/php/php7.3-fpm.pid
+
+#CMD 		[ "/usr/sbin/php-fpm7.3", "--nodaemonize"]
 
 # Ports
 
