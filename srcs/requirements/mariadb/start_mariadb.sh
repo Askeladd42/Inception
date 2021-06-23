@@ -13,4 +13,4 @@ mysql -e "FLUSH PRIVILEGES"
 
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
 
-# need to find why the tables are not installed again
+# problem from the my.cnf that screw up all the tables definition
