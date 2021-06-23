@@ -13,4 +13,4 @@ mysql -e "FLUSH PRIVILEGES"
 
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
 
-# need to correct the syntax for corrector user creation
+# need to find why the tables are not installed again
