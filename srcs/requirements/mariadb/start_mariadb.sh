@@ -1,5 +1,9 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
+
+mysql_install_db --no-defaults --user=root \
+   --srcdir=/var/lib/mysql
+
 service mysql start
 
 mysql -e "CREATE DATABASE Inception"
@@ -14,3 +18,4 @@ mysql -u root ${MYSQL_DATABASE} < /database.sql
 exec mysqld -u root --datadir="/var/lib/mysql/mysql"
 
 # problem from the my.cnf that screw up all the tables definition
+# maybe using 
