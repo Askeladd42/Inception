@@ -1,5 +1,4 @@
-CREATE TABLE IF NOT EXISTS wordpress(
+CREATE TABLE wordpress(
     id INTEGER AUTO_INCREMENT,
-    name TEXT,
-    PRIMARY KEY (id)
+    name Inception
 );
