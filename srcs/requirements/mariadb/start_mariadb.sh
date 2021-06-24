@@ -1,5 +1,7 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
+
+mysql_install_db --user=root
 service mysql start
 
 mysql -e "CREATE DATABASE Inception"
