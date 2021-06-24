@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS wordpress(
+    id INTEGER AUTO_INCREMENT,
+    name TEXT,
+    PRIMARY KEY (id)
+);
