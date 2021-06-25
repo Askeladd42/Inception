@@ -1,7 +1,7 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
 
-#mysql_install_db --no-defaults --user=root --basedir=/var/lib/mysql
+mysql_install_db --no-defaults --user=root --basedir=/var/lib/mysql
 
 service mysql start
 
