@@ -1,7 +1,9 @@
 version:   "3"
 services:
   nginx:
+    container_name: nginx
     build: ./requirements/nginx
+    image: my_nginx:v01
     volumes:
       - ./conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
@@ -14,6 +16,7 @@ services:
       - backend
 
   mysql:
+    container_name: mariaDB
     build: ./requirements/mariadb
     volumes:
       - /data/mysql:/var/lib/mysql
@@ -26,6 +29,7 @@ services:
       - backend
 
   wordpress:
+    container_name: wp-php7.3
     build: ./requirements/wordpress
     volumes:
       - /data/html:/var/www/html
