@@ -3,7 +3,7 @@ services:
   nginx:
     container_name: nginx
     build: ./requirements/nginx
-    image: my_nginx:v01
+    image: my_nginx:v.1.0.0
     volumes:
       - ./conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
@@ -18,6 +18,7 @@ services:
   mysql:
     container_name: mariaDB
     build: ./requirements/mariadb
+    image: my_mariadb:v.1.0.0
     volumes:
       - /data/mysql:/var/lib/mysql
     ports: 
@@ -31,6 +32,7 @@ services:
   wordpress:
     container_name: wp-php7.3
     build: ./requirements/wordpress
+    image: wp-php:v.1.0.0
     volumes:
       - /data/html:/var/www/html
     ports:
