@@ -3,7 +3,7 @@
 
 mysql_install_db --no-defaults --user=root --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
 
-service mysql start
+service mysql.server start
 
 mysql -e "CREATE DATABASE Inception"
 mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"

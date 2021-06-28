@@ -28,14 +28,14 @@ RUN 	chmod +x /wp_start.sh
 
 # start wordpress + php
 
-ENTRYPOINT ["/wp_start.sh", "-g", "--nodaemonize"]
+ENTRYPOINT ["/wp_start.sh"]
 
 ## test with another method (cmd use)
 #RUN	sed -i "s/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/" "/etc/php/7.3/fpm/pool.d/www.conf"
 #RUN 	mkdir -p /run/php/
 #RUN 	touch /run/php/php7.3-fpm.pid
 
-#CMD 		[ "/usr/sbin/php-fpm7.3", "--nodaemonize"]
+#CMD 		[ "/usr/sbin/php-fpm7.3", "--nodaemonize]
 
 # Ports
 
