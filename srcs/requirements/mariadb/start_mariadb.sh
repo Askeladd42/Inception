@@ -1,7 +1,7 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
 
-mysql_install_db --no-defaults --user=root --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
+mysql_install_db --user=root --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
 
 service mysql.server start
 

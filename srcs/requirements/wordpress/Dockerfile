@@ -25,6 +25,9 @@ COPY	./wp-config.php /var/www/html/wordpress/
 RUN 	rm -rf /var/www/html/wordpress/wp-config-sample.php
 COPY 	wp_start.sh /wp_start.sh
 RUN 	chmod +x /wp_start.sh
+RUN		sed -i "s/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/" "/etc/php/7.3/fpm/pool.d/www.conf"
+RUN 	mkdir -p /run/php/
+RUN 	touch /run/php/php7.3-fpm.pid
 
 # start wordpress + php
 
