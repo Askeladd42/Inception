@@ -1,7 +1,7 @@
 #!/bin/sh
 #not sure if '%' is necessary here for boss user
 
-#mysql_install_db --user=root --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
+#mysql_install_db --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
 
 service mysql start
 
@@ -15,4 +15,4 @@ mysql Inception < /database.sql
 
 exec mysqld -u root --datadir="/var/lib/mysql"
 
-# problem from the my.cnf that screw up all the tables definition
+# socket issues again, maybe because of a start failure ?
