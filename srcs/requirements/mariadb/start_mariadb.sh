@@ -13,4 +13,3 @@ mysql -e "FLUSH PRIVILEGES"
 mysql Inception < /database.sql
 
 exec mysqld -u root --datadir="/var/lib/mysql"
-
