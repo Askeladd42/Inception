@@ -1,7 +1,8 @@
 #!/bin/sh
-#not sure if '%' is necessary here for boss user
 
-#mysql_install_db --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
+#mysqld_install_db --no-defaults --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
+
+mysql_secure_installation --no-defaults --basedir=/var/lib/mysql # need root pwd in the container ?!
 
 service mysql start
 
