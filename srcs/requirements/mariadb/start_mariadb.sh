@@ -4,12 +4,12 @@
 
 service mysql start			#mysql fail to start, not creating the .sock for the db to work
 
-mysql -e "CREATE DATABASE Inception"
-mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
-mysql -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'"
-mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'%' IDENTIFIED BY 'bruh'"
-mysql -e "GRANT ALL PRIVILEGES ON Inception.* TO 'corrector'@'Inception'"
-mysql -e "FLUSH PRIVILEGES"
-mysql Inception < /database.sql
+mysql -u root -e "CREATE DATABASE Inception"
+mysql -u root -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
+mysql -u root -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'"
+mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'boss'@'%' IDENTIFIED BY 'bruh'"
+mysql -u root -e "GRANT ALL PRIVILEGES ON Inception.* TO 'corrector'@'Inception'"
+mysql -u root -e "FLUSH PRIVILEGES"
+mysql -u root Inception < /database.sql
 
 exec mysqld -u root --datadir="/var/lib/mysql"
