@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/06/17 19:02:09 by plam             ###   ########.fr        #
+#    Updated: 2021/07/01 23:39:12 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ down:
 					
 clean:
 					docker rmi -f ${IMAGES}
-					docker image rm -f ${IMAGES}
 
 debug:
 	@echo ${CONTAINERS}

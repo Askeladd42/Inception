@@ -46,3 +46,17 @@ services:
 networks:
   backend:
     driver: bridge
+
+#volumes:                                       to add correctly later
+#  wp:
+#    driver: local
+#    driver_opts:
+#      o: bind
+#      type: none
+#      device: /home/plam/data/wp
+#  db:
+#    driver: local
+#    driver_opts:
+#      o: bind
+#      type: none
+#      device: /home/plam/data/db
