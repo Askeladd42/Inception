@@ -15,6 +15,7 @@ COPY		database.sql /database.sql
 RUN			chmod +x /start_mariadb.sh
 COPY		./conf/my.cnf /etc/mysql/my.cnf
 RUN			mkdir /var/run/mysqld
+RUN			chown -R mysql:mysql /var/lib/mysql
 RUN			chown -R 755 /var/run/mysqld
 
 # Start server
