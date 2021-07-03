@@ -1,6 +1,4 @@
-#!/bin/bash
-
-#mysql_install_db --defaults-file=/etc/mysql/my.cnf --basedir=/var/lib/mysql #conflict in the install, should check what happened that mess up the container
+#!/bin/sh
 
 service mysql start			#mysql fail to start, not creating the .sock for the db to work
 

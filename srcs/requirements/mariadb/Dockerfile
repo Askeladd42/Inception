@@ -13,7 +13,9 @@ RUN 		apt-get install -y mariadb-server
 COPY		start_mariadb.sh /start_mariadb.sh
 COPY		database.sql /database.sql
 RUN			chmod +x /start_mariadb.sh
+RUN			chmod +x /database.sql
 COPY		./conf/my.cnf /etc/mysql/my.cnf
+RUN			chown -R 755 /etc/mysql/my.cnf
 RUN			mkdir /var/run/mysqld
 RUN			chown -R mysql:mysql /var/lib/mysql
 RUN			chown -R 755 /var/run/mysqld
