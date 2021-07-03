@@ -20,7 +20,7 @@ services:
     build: ./requirements/mariadb
     image: my_mariadb:v.1.0.0
     volumes:
-      - /data/mysql:/var/lib/mysql
+      - database:/var/lib/mysql
     ports: 
       - "3307:3306"
     restart: on-failure
@@ -34,7 +34,7 @@ services:
     build: ./requirements/wordpress
     image: wp-php:v.1.0.0
     volumes:
-      - /data/html:/var/www/html
+      - wordpress:/var/www/html
     ports:
       - "9000:9000"
     restart: on-failure
@@ -47,16 +47,16 @@ networks:
   backend:
     driver: bridge
 
-#volumes:                                       to add correctly later
-#  wp:
-#    driver: local
-#    driver_opts:
-#      o: bind
-#      type: none
-#      device: /home/plam/data/wp
-#  db:
-#    driver: local
-#    driver_opts:
-#      o: bind
-#      type: none
-#      device: /home/plam/data/db
+volumes:
+  wordpress:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/plam/data/wordpress
+  database:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/plam/data/database
