@@ -1,7 +1,9 @@
 #!/bin/sh
 
-service mysql start			#mysql fail to start, not creating the .sock for the db to work
+service mysql status
 
+service mysql start			#mysql fail to start, not creating the .sock for the db to work
+sleep 100
 mysql -e "CREATE DATABASE Inception"
 mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
 mysql -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'"
