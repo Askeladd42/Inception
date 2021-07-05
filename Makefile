@@ -22,7 +22,7 @@ dom_add:
 					sudo sed -i "1i\127.0.0.1\tplam.42.fr" /etc/hosts
 
 dom_del:
-					sudo sed -i "1d" /etc/hosts
+					sudo sed -i "/127.0.0.1\tplam.42.fr/d" /etc/hosts
 
 volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
