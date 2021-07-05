@@ -24,6 +24,9 @@ dom_add:
 dom_del:
 					sudo sed -i "/127.0.0.1\tplam.42.fr/d" /etc/hosts
 
+del_images:
+					docker rmi -f ${IMAGES}
+
 volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
 					sudo mkdir -p $(VOL_DIR)/wordpress && sudo chown -R www-data:www-data $(VOL_DIR)/wordpress
@@ -39,7 +42,7 @@ clean:				down dom_del
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
 					sudo rm -rf $(VOL_DIR)/wordpress
-					docker rmi -f ${IMAGES}
+
 debug:
 	@echo ${CONTAINERS}
 	@echo ${IMAGES}

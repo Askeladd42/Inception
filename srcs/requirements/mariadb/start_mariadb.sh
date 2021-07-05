@@ -1,7 +1,7 @@
 #!/bin/sh
 
 service mysql start
-sleep 20
+sleep 10
 mysql -e "CREATE DATABASE Inception"
 mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
 mysql -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'"
