@@ -3,7 +3,7 @@
 service mysql status
 
 service mysql start			#mysql fail to start, not creating the .sock for the db to work but only in the dockerfile execution
-sleep 100
+sleep 20
 mysql -e "CREATE DATABASE Inception"
 mysql -e "CREATE USER 'boss'@'Inception' IDENTIFIED BY 'bruh'"
 mysql -e "CREATE USER 'corrector'@'Inception' IDENTIFIED BY 'oof'"
