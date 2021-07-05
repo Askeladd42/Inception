@@ -5,7 +5,7 @@ services:
     build: ./requirements/nginx
     image: my_nginx:v.1.0.0
     volumes:
-      - ./conf:/etc/nginx/conf.d
+      - /conf:/etc/nginx/conf.d
       - /data/html:/var/www/html
     ports:
       - "127.0.0.1:443:443"
@@ -34,7 +34,7 @@ services:
     build: ./requirements/wordpress
     image: wp-php:v.1.0.0
     volumes:
-      - wp:/var/www/html/wordpress
+      - wordpress:/var/www/html/wordpress
     ports:
       - "9000:9000"
     restart: on-failure
@@ -54,7 +54,7 @@ volumes:
       o: bind
       type: none
       device: /home/plam/data/database
-  wp:
+  wordpress:
     driver: local
     driver_opts:
       o: bind
