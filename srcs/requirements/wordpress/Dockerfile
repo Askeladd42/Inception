@@ -18,10 +18,10 @@ RUN 	cd /tmp \
 		&& tar -zxvf latest.tar.gz \
 		&& mkdir /var/www \
 		&& mkdir /var/www/html \
-		&& mv -f wordpress /var/www/html/wordpress \
+		&& mv -f wordpress /var/www/html \
 		&& chown -R www-data:www-data /var/www/html/wordpress \
-		&& chmod 755 -R /var/www/html/wordpress/
-COPY	./wp-config.php /var/www/html/wordpress/
+		&& chmod 755 -R /var/www/html/wordpress
+COPY	./wp-config.php /var/www/html/wordpress
 RUN 	rm -rf /var/www/html/wordpress/wp-config-sample.php
 COPY 	wp_start.sh /wp_start.sh
 RUN 	chmod +x /wp_start.sh
