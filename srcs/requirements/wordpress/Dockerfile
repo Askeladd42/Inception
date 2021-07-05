@@ -1,7 +1,7 @@
 #DDL base image Debian Buster
 
 FROM debian:buster
-LABEL maintainer="plam plam@student.42.fr"
+LABEL maintainer="plam <plam@student.42.fr>"
 
 # update the software repository
 RUN apt-get update && apt-get -y upgrade
