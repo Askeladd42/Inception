@@ -28,13 +28,13 @@ volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
 					sudo mkdir -p $(VOL_DIR)/wordpress && sudo chown -R www-data:www-data $(VOL_DIR)/wordpress
 
-up:					volumes
+up:					volumes dom_add
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
 
 down:
 					docker-compose -f $(SRC)/docker-compose.yml down
 					
-clean:				down
+clean:				down dom_del
 
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
