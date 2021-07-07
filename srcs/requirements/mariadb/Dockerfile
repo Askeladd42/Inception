@@ -11,9 +11,9 @@ RUN 		apt-get install -y mariadb-server
 
 # Copy confile files
 COPY		start_mariadb.sh /start.sh
-COPY		database.sql /database.sql
+#COPY		database.sql /database.sql
 RUN			chmod +x /start.sh
-RUN			chmod +rw /database.sql
+#RUN			chmod +rw /database.sql
 COPY		./conf/my.cnf /etc/mysql/my.cnf
 RUN			chmod +rw /etc/mysql/my.cnf
 

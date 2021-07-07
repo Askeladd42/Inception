@@ -9,7 +9,7 @@ mysql -e "GRANT ALL PRIVILEGES ON *.* TO ${WP_ADMIN}@'%' IDENTIFIED BY ${WP_ADMI
 mysql -e "GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO ${WP_USER}@'${MYSQL_DATABASE}'"
 mysql -e "FLUSH PRIVILEGES"
 
-mysql ${MYSQL_DATABASE} < /database.sql
+#mysql ${MYSQL_DATABASE} < /database.sql
 
 service mysql stop
 
