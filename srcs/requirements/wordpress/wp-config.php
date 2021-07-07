@@ -25,7 +25,7 @@ define( 'DB_USER', ${WP_DB_USER});
 /** MySQL database password */
 define('DB_PASSWORD', ${WP_DB_PASSWORD});
 /** MySQL hostname */
-define('DB_HOST', ${WP_DB_HOST});
+define('DB_HOST', ${DOMAIN_NAME});
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Do not change this if in doubt. */
