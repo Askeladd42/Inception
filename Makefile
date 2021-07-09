@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/07/05 17:43:02 by plam             ###   ########.fr        #
+#    Updated: 2021/07/09 14:36:15 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ del_images:
 
 volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
-					sudo mkdir -p $(VOL_DIR)/wordpress && sudo chown -R www-data:www-data $(VOL_DIR)/wordpress
+					sudo mkdir -p $(VOL_DIR)/wp && sudo chown -R www-data:www-data $(VOL_DIR)/wp
 
 up:					volumes dom_add
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
@@ -41,7 +41,7 @@ clean:				down dom_del
 
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
-					sudo rm -rf $(VOL_DIR)/wordpress
+					sudo rm -rf $(VOL_DIR)/wp
 
 debug:
 	@echo ${CONTAINERS}
