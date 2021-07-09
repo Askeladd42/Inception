@@ -34,7 +34,7 @@ services:
     build: ./requirements/wordpress
     image: wp-php:v.1.0.0
     volumes:
-      - wp:/var/www/html/wordpress
+      - wordpress:/var/www/html/wordpress
     ports:
       - "9000:9000"
     restart: on-failure
@@ -54,9 +54,9 @@ volumes:
       o: bind
       type: none
       device: /home/plam/data/database
-  wp:
+  wordpress:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/plam/data/wp
+      device: /home/plam/data/wordpress
