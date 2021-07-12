@@ -19,7 +19,6 @@ RUN 	cd /tmp \
 		&& mkdir /var/www \
 		&& mkdir /var/www/html \
 		&& mv -f wordpress /var/www/html \
-		&& chown -R www-data:www-data /var/www/html/wordpress \
 		&& chmod 755 -R /var/www/html/wordpress
 COPY	./wp-config.php /var/www/html/wordpress
 RUN 	rm -rf /var/www/html/wordpress/wp-config-sample.php
