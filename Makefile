@@ -41,7 +41,7 @@ clean:				down dom_del
 
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
-					sudo rm -rf $(VOL_DIR)/wp
+					sudo rm -rf $(VOL_DIR)/wordpress
 
 debug:
 	@echo ${CONTAINERS}

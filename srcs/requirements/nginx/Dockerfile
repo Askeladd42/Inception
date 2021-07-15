@@ -16,6 +16,12 @@ ENV test_nginx=ok
 
 # SSL creation
 
+#RUN 	openssl req -x509 -nodes -days 1 -newkey rsa:2048 			\
+#		-keyout etc/ssl/private/inception_key.pem					\
+#		-out etc/ssl/certs/inception_cert.pem 						\
+#		-subj "/C=FR/ST=FRANCE/L=PARIS/O=INCEPTION/CN=127.0.0.1"  	&& \
+#		openssl dhparam -out /etc/nginx/dhparam.pem 2048
+
 COPY ssl/inception.key /etc/ssl/private/nginx-cert.key
 COPY ssl/inception.crt /etc/ssl/certs/nginx-cert.crt
 
