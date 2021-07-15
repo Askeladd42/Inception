@@ -29,7 +29,7 @@ del_images:
 
 volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
-					sudo mkdir -p $(VOL_DIR)/wp && sudo chown -R www-data:www-data $(VOL_DIR)/wp
+					sudo mkdir -p $(VOL_DIR)/wordpress && sudo chown -R www-data:www-data $(VOL_DIR)/wordpress
 
 up:					volumes dom_add
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
