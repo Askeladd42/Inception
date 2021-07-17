@@ -25,6 +25,8 @@ RUN 	chown -R www-data:www-data /var/www
 #COPY ssl/inception.key /etc/ssl/private/nginx-cert.key
 #COPY ssl/inception.crt /etc/ssl/certs/nginx-cert.crt
 
+#RUN 	sed -i "1i\127.0.0.1\tplam.42.fr" /etc/hosts
+
 # start nginx
 CMD [ "nginx", "-g", "daemon off;" ]
 
