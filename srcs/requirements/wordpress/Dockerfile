@@ -20,7 +20,8 @@ RUN 	cd /tmp \
 		&& rm latest.tar.gz \
 		&& mkdir /var/www \
 		&& mv -f wordpress /var/www/ \
-		&& chmod 755 -R /var/www/wordpress
+		&& chmod 755 -R /var/www/wordpress \
+		&& chown -R www-data:www-data /var/www/wordpress
 		
 COPY	./wp-config.php /var/www/wordpress
 RUN 	rm -rf /var/www/wordpress/wp-config-sample.php

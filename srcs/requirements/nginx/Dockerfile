@@ -10,8 +10,9 @@ RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y nginx wget
 
 # nginx config
-COPY conf/nginx.conf /tmp/default.conf
-RUN cp /tmp/default.conf /etc/nginx/conf.d/
+COPY 	conf/nginx.conf /tmp/default.conf
+RUN 	cp /tmp/default.conf /etc/nginx/conf.d/
+RUN 	chown -R www-data:www-data /var/www
 #ENV test_nginx=ok
 
 # SSL creation

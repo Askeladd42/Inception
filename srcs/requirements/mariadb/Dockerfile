@@ -16,6 +16,7 @@ RUN			chmod +x /start.sh
 #RUN			chmod +rw /database.sql
 COPY		./conf/my.cnf /etc/mysql/my.cnf
 RUN			chmod +rw /etc/mysql/my.cnf
+RUN			chown -R mysql:mysql /var/lib/mysql
 
 # Start server
 ENTRYPOINT	["/start.sh"]
