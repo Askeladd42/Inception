@@ -5,7 +5,7 @@ services:
     build: ./requirements/nginx
     image: my_nginx:v.1.0.0
     volumes:
-      - wp:/var/www/html:ro
+      - wp:/var/www
     ports:
       - "80:80"
     restart: on-failure
@@ -33,7 +33,7 @@ services:
     build: ./requirements/wordpress
     image: wp-php:v.1.0.0
     volumes:
-      - wp:/var/www/html/wordpress
+      - wp:/var/www/wordpress
     ports:
       - "9000:9000"
     restart: on-failure
@@ -51,11 +51,11 @@ volumes:
     driver: local
     driver_opts:
       o: bind
-      type: none
+      type: volume
       device: /home/plam/data/database
   wp:
     driver: local
     driver_opts:
       o: bind
-      type: none
+      type: volume
       device: /home/plam/data/wordpress
