@@ -18,10 +18,9 @@ RUN 	chown -R www-data:www-data /var/www
 # SSL creation
 
 #RUN 	openssl req -x509 -nodes -days 1 -newkey rsa:2048 		\
-#		-subj "/C=FR/ST=FRANCE/L=PARIS/O=INCEPTION/CN=127.0.0.1" \
+#		-subj "/C=FR/ST=FRANCE/L=PARIS/O=INCEPTION/CN=plam.42.fr" \
 #		-keyout etc/ssl/private/inception.key					\
-#		-out etc/ssl/certs/inception.crt 						 
-
+#		-out etc/ssl/certs/inception.crt
 #COPY ssl/inception.key /etc/ssl/private/nginx-cert.key
 #COPY ssl/inception.crt /etc/ssl/certs/nginx-cert.crt
 
