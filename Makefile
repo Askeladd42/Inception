@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/07/18 10:42:46 by plam             ###   ########.fr        #
+#    Updated: 2021/07/18 15:26:47 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ volumes:
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
 					sudo mkdir -p $(VOL_DIR)/wp && sudo chown -R www-data:www-data $(VOL_DIR)/wp
 
-up:					volumes dom_add
+up:					volumes
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
 
 down:

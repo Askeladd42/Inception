@@ -5,7 +5,6 @@ services:
     build: ./requirements/nginx
     image: my_nginx:v.1.0.0
     ports:
-      - "443:443"
       - "127.0.0.1:80:80"
     restart: on-failure
     env_file: 
