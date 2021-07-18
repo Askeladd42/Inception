@@ -4,8 +4,6 @@ services:
     container_name: nginx
     build: ./requirements/nginx
     image: my_nginx:v.1.0.0
-    volumes:
-      - wp:/var/www
     ports:
       - "443:443"
       - "127.0.0.1:80:80"

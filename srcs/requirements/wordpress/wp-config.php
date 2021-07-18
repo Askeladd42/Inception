@@ -21,9 +21,9 @@
 /** The name of the database for WordPress */
 define( 'DB_NAME', getenv('WP_DB_NAME'));
 /** MySQL database username */
-define( 'DB_USER', getenv('WP_DB_USER'));
+define( 'DB_USER', getenv('WP_USER'));
 /** MySQL database password */
-define('DB_PASSWORD', getenv('WP_DB_PASSWORD'));
+define('DB_PASSWORD', getenv('WP_USER_PASSWORD'));
 /** MySQL hostname */
 define('DB_HOST', getenv('DOMAIN_NAME'));
 /** Database Charset to use in creating database tables. */
