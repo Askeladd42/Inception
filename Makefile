@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/07/18 10:37:21 by plam             ###   ########.fr        #
+#    Updated: 2021/07/18 10:40:22 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ up:					volumes dom_add
 down:
 					docker-compose -f $(SRC)/docker-compose.yml down
 					
-clean:				down --rmi all
+clean:				downdocker-compose -f $(SRC)/docker-compose.yml down --rmi all
 
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
