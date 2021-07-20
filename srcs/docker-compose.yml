@@ -27,6 +27,8 @@ services:
       - backend
 
   wordpress:
+    depends_on:
+      - mysql
     container_name: wp-php7.3
     build: ./requirements/wordpress
     image: wp-php:v.1.0.0
