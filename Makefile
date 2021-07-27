@@ -30,7 +30,7 @@ del_images:
 volumes:
 					sudo userdel www-data && sudo useradd -u 82 www-data
 					sudo mkdir -p $(VOL_DIR)/database && sudo chown -R mysql:mysql $(VOL_DIR)/database
-					sudo mkdir -p $(VOL_DIR)/wp && sudo chown -R www-data:www-data $(VOL_DIR)/wp
+					sudo mkdir -p $(VOL_DIR)/wordpress && sudo chown -R www-data:www-data $(VOL_DIR)/wordpress
 
 up:					volumes
 					docker-compose -f $(SRC)/docker-compose.yml up --build -d
@@ -43,7 +43,7 @@ clean:
 
 fclean:				clean
 					sudo rm -rf $(VOL_DIR)/database
-					sudo rm -rf $(VOL_DIR)/wp
+					sudo rm -rf $(VOL_DIR)/wordpress
 
 debug:
 	@echo ${CONTAINERS}
