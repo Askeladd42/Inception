@@ -10,8 +10,9 @@ RUN		apt-get update && apt-get -y upgrade
 RUN		apt-get install -y nginx wget
 
 # nginx config
-COPY	conf/nginx.conf /tmp/default.conf
-RUN		cp /tmp/default.conf /etc/nginx/conf.d/
+COPY	conf/new.conf /etc/nginx/nginx.conf
+COPY	conf/nginx.conf /etc/nginx/sites-available/site.conf
+RUN		ln -s /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.conf
 RUN		chown -R www-data:www-data /var/www
 
 # SSL creation
@@ -31,4 +32,4 @@ CMD [ "nginx", "-g", "daemon off;" ]
 
 # Ports
 
-EXPOSE 443
+EXPOSE 443 80

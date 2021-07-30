@@ -6,7 +6,7 @@
 #    By: plam <plam@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/29 13:19:42 by plam              #+#    #+#              #
-#    Updated: 2021/07/30 19:07:02 by plam             ###   ########.fr        #
+#    Updated: 2021/07/31 00:58:20 by plam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,10 @@ clean:
 
 fclean:				clean dom_del
 					docker volume rm -f ${VOLUMES}
-					docker network rm ${NETWORKS}
 					sudo rm -rf $(VOL_DIR)/database
 					sudo rm -rf $(VOL_DIR)/wp
 					sudo rm -rf $(VOL_DIR)
+					docker network rm ${NETWORKS}
 
 debug:
 	@echo ${CONTAINERS}

@@ -23,8 +23,8 @@ RUN 	cd /tmp \
 		&& chmod 755 -R /var/www/wordpress \
 		&& chown -R www-data:www-data /var/www/wordpress
 
-#RUN 	rm -rf /var/www/wordpress/wp-config-sample.php
-#COPY	./conf/wp-config.php /var/www/wordpress
+RUN 	rm -rf /var/www/wordpress/wp-config-sample.php
+COPY	./conf/wp-config.php /var/www/wordpress
 COPY	./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 COPY 	./tools/wp_start.sh /wp_start.sh
 RUN 	chmod +x /wp_start.sh
