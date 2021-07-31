@@ -32,4 +32,4 @@ CMD [ "nginx", "-g", "daemon off;" ]
 
 # Ports
 
-EXPOSE 443 80
+EXPOSE 443
